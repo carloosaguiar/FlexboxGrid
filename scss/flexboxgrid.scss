@@ -1,0 +1,223 @@
+/* configurações iniciais */
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.container-fluid{
+	padding-right: 2rem;
+	padding-left: 2rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.collumn{
+	flex-direction: column;
+}
+
+/* Variaveis globais */
+$AH: start, center, end;
+$AV: top, middle, bottom;
+
+/* funções */
+
+@function gerarColunas($colunas){
+	$total: 12;
+
+	@return percentage($colunas/$total);
+}
+
+/*------------------------*/
+
+@function eixoVert($nome){
+
+	@if $nome == top {
+		@return flex-start;
+	} 
+
+	@if $nome == middle {
+		@return center;
+	}
+
+	@if $nome == bottom {
+		@return flex-end;
+	}
+
+}
+
+/*--------------------------*/
+
+@function eixoHoriz($nome){
+
+	@if $nome == start {
+		@return flex-start;
+	} 
+
+	@if $nome == center {
+		@return center;
+	}
+
+	@if $nome == end {
+		@return flex-end;
+	}
+
+}
+
+/* Telas */
+
+/* Para todas as telas */
+
+/* Colunas - geral */
+
+@for $i from 1 through 12 {
+	.col-#{$i} {
+		width: gerarColunas($i);
+	}
+}
+
+/* Distribuição */
+
+.between{
+	justify-content: space-between;
+}
+
+.around{
+	justify-content: space-around;
+}
+
+/* Tela pequena - sm */
+
+@media(max-width: 640px){
+
+	/* Colunas - sm */
+
+	@for $i from 1 through 12{
+		.col-sm-#{$i}{
+			width: gerarColunas($i);
+		}
+	}
+
+	/* Alinhamento Vertical - sm */
+
+	@each $nome in $AV{
+		.#{$nome}-sm{
+			align-items: eixoVert($nome);
+		}
+	}
+
+	/* Alinhamento Horizontal - sm */
+
+	@each $nome in $AH{
+		.#{$nome}-sm{
+			justify-content: eixoHoriz($nome);
+		}
+	}
+
+	.container-fluid{
+		padding-right: 0.5rem;
+		padding-left: 0.5rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* Distribuição */
+
+	.between-sm{
+		justify-content: space-between;
+	}
+
+	.around-sm{
+		justify-content: space-around;
+	}
+}
+
+/* Tela media - md */
+
+@media(min-width: 641px) and (max-width: 1007px){
+
+	/* Colunas - md */
+
+	@for $i from 1 through 12{
+		.col-md-#{$i}{
+			width: gerarColunas($i);
+		}
+	}
+
+	/* Alinhamento Vertical - md */
+
+	@each $nome in $AV{
+		.#{$nome}-md{
+			align-items: eixoVert($nome);
+		}
+	}
+
+	/* Alinhamento Horizontal - md */
+
+	@each $nome in $AH{
+		.#{$nome}-md{
+			justify-content: eixoHoriz($nome);
+		}
+	}
+
+	.container-fluid{
+		padding-right: 1rem;
+		padding-left: 1rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* Distribuição */
+
+	.between-md{
+		justify-content: space-between;
+	}
+
+	.around-md{
+		justify-content: space-around;
+	}
+
+}
+
+/* Tela grande - lg */
+
+@media(min-width: 1008px){
+
+	/* Colunas - lg */
+
+	@for $i from 1 through 12{
+		.col-lg-#{$i}{
+			width: gerarColunas($i);
+		}
+	}
+
+	/* Alinhamento Vertical - lg */
+
+	@each $nome in $AV{
+		.#{$nome}-lg{
+			align-items: eixoVert($nome);
+		}
+	}
+
+	/* Alinhamento Horizontal - lg */
+
+	@each $nome in $AH{
+		.#{$nome}-lg{
+			justify-content: eixoHoriz($nome);
+		}
+	}
+
+	/* Distribuição */
+
+	.between-lg{
+		justify-content: space-between;
+	}
+
+	.around-lg{
+		justify-content: space-around;
+	}
+}
