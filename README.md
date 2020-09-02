@@ -6,7 +6,7 @@ Veja a documentação do flexboxgrid em [flexboxgrid](flexboxgrid.xyz)
 
 ## Como usar as colunas do framework
 
-Trabalhe de forma [simples com colonas no flexboxgrid](https://flexboxgrid.xyz/Colunas), entre e veja como é simples.
+Trabalhe de forma [simples com colunas no flexboxgrid](https://flexboxgrid.xyz/Colunas), entre e veja como é simples.
 
 ### Como usar o alinhamento do framework
 
