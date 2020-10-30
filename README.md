@@ -2,7 +2,7 @@
 
 Usado para facilitar no alinhamento, organização do site ou pagina web do desencolvedor. É totalmente responsivo.
 
-Veja a documentação do flexboxgrid em [flexboxgrid](flexboxgrid.xyz)
+Veja a documentação do flexboxgrid em [flexboxgrid](https://www.flexboxgrid.xyz)
 
 ## Como usar as colunas do framework
 
